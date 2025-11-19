@@ -10,7 +10,7 @@ export async function POST(request) {
 
         const { data, error } = await resend.emails.send({
             from: 'Portfolio Contact <onboarding@resend.dev>', // Use your verified domain in production
-            to: ['kartiksinghal2803@gmail.com'], // Your email address
+            to: ['kartiksinghal28032006@gmail.com'], // Updated to your verified Resend email
             subject: `New Contact Form Submission from ${name}`,
             html: `
         <p><strong>Name:</strong> ${name}</p>
