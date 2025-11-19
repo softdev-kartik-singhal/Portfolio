@@ -16,7 +16,7 @@ const Projects = () => {
             subtitle: "Interactive Memory Challenge",
             description: "Interactive memory game built using HTML, CSS, and JavaScript with dynamic color sequences and responsive design.",
             tags: ["HTML", "CSS", "JavaScript"],
-            link: "https://softdev-kartik-singhal.github.io/simon-says-game/", // Placeholder assumption
+            link: "https://simon-says-game-ynh1.onrender.com", // Placeholder assumption
             github: "https://github.com/softdev-kartik-singhal",
         },
     ];
