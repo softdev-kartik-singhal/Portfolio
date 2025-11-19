@@ -8,7 +8,7 @@ const Projects = () => {
             subtitle: "A Travel Accommodation Website",
             description: "Developed a full stack travel listing platform using Node.js, Express, and MongoDB Atlas. Implemented user authentication with Passport.js and deployed on Render. Features CRUD operations and full-stack development practices.",
             tags: ["Node.js", "Express", "MongoDB", "Passport.js"],
-            link: "https://wanderlust-travel-project.onrender.com", // Assuming this link based on description, or placeholder
+            link: "https://wanderlust-vj6s.onrender.com", // Assuming this link based on description, or placeholder
             github: "https://github.com/softdev-kartik-singhal", // Placeholder to profile if specific repo unknown
         },
         {
