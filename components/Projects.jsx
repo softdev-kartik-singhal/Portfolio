@@ -10,6 +10,21 @@ const Projects = () => {
             tags: ["Node.js", "Express", "MongoDB", "Passport.js"],
             link: "https://wanderlust-vj6s.onrender.com", // Assuming this link based on description, or placeholder
             github: "https://github.com/softdev-kartik-singhal", // Placeholder to profile if specific repo unknown
+        },{
+            title: "ScrollEats",
+            subtitle: "A Full Stack Application inspired by Instagram Reels and Zomato",
+            description: "Built a full-stack food discovery and ordering platform where users browse food reels, like/save content, and place orders. Food partners can manage their profiles, upload reels, and list food items. The application includes authentication, role-based access, media uploads, and real-time interaction features.",
+            tags: ["Node.js", "MongoDB", "Express", "JWT", "React", "Material UI", "Bootstrap", "Font Awesome", "Render"],
+            link: "https://scrolleats-application.onrender.com", // Assuming this link based on description, or placeholder
+            github: "https://github.com/softdev-kartik-singhal", // Placeholder to profile if specific repo unknown
+        },
+        {
+            title: "Stokro",
+            subtitle: "A modern stock trading experience built for learning and simulation.",
+            description: "Stokro is a stock trading web application inspired by Zerodha that allows users to explore market data, manage virtual investments, and track portfolio performance. Designed to mirror real trading workflows, it offers a smooth, intuitive interface with secure authentication and real-time updates.",
+            tags: ["Node.js", "MongoDB", "Express", "JWT", "React", "Material UI", "Font Awesome", "Bootstrap", "Render"],
+            link: "https://stokro.onrender.com", // Assuming this link based on description, or placeholder
+            github: "https://github.com/softdev-kartik-singhal", // Placeholder to profile if specific repo unknown
         },
         {
             title: "Simon Says Game",
