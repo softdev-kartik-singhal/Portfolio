@@ -5,7 +5,7 @@ const Projects = () => {
     const projects = [
         {
             title: "AI Crime Intelligence Platform",
-            subtitle: "Serverless crime intelligence dashboard with GIS spatial analytics and AI-driven insights.",
+            subtitle: "Serverless crime intelligence platform with GIS spatial analytics and AI-driven insights.",
             description: "Built an enterprise-grade law enforcement intelligence platform that processes and visualizes real-time CCTNS crime records. Features an interactive GIS mapping interface for spatial hotspot detection, an AI copilot powered by QuickML for natural language database querying and predictive risk forecasting, end-to-end cloud FIR management, and role-based officer performance analytics.",
             tags: ["React 19", "Node.js", "Zoho Catalyst", "QuickML AI", "Leaflet GIS", "Serverless", "OAuth 2.0", "Vite", "Tailwind", "CSS"],
             link: "https://ksp-crime-intelligence-50044050041.development.catalystappsail.in", // Assuming this link based on description, or placeholder
