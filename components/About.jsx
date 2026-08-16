@@ -26,8 +26,7 @@ const About = () => {
                                     <h4 className="text-white font-medium">Computer Science and Engineering</h4>
                                     <p className="text-slate-400 text-sm">Madhav Institute of Technology and Science</p>
                                     <div className="flex justify-between text-slate-500 text-sm mt-1">
-                                        <span>CGPA: 7.1</span>
-                                        <span>(Till - 04-11-25)</span>
+                                        <span>CGPA: 7.52</span>
                                     </div>
                                 </div>
                                 <div className="border-t border-slate-800 pt-4">
@@ -36,6 +35,14 @@ const About = () => {
                                     <div className="flex justify-between text-slate-500 text-sm mt-1">
                                         <span>80.8%</span>
                                         <span>2024</span>
+                                    </div>
+                                </div>
+                                <div className="border-t border-slate-800 pt-4">
+                                    <h4 className="text-white font-medium">X (CBSE)</h4>
+                                    <p className="text-slate-400 text-sm">Gwalior Glory High School, Gwalior</p>
+                                    <div className="flex justify-between text-slate-500 text-sm mt-1">
+                                        <span>89.0%</span>
+                                        <span>2022</span>
                                     </div>
                                 </div>
                             </div>

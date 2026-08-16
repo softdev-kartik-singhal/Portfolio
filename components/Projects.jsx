@@ -4,13 +4,15 @@ import FadeIn from './FadeIn';
 const Projects = () => {
     const projects = [
         {
-            title: "Wanderlust",
-            subtitle: "A Travel Accommodation Website",
-            description: "Developed a full stack travel listing platform using Node.js, Express, and MongoDB Atlas. Implemented user authentication with Passport.js and deployed on Render. Features CRUD operations and full-stack development practices.",
-            tags: ["Node.js", "Express", "MongoDB", "Passport.js"],
-            link: "https://wanderlust-vj6s.onrender.com", // Assuming this link based on description, or placeholder
-            github: "https://github.com/softdev-kartik-singhal", // Placeholder to profile if specific repo unknown
-        },{
+            title: "AI Crime Intelligence Platform",
+            subtitle: "Serverless crime intelligence dashboard with GIS spatial analytics and AI-driven insights.",
+            description: "Built an enterprise-grade law enforcement intelligence platform that processes and visualizes real-time CCTNS crime records. Features an interactive GIS mapping interface for spatial hotspot detection, an AI copilot powered by QuickML for natural language database querying and predictive risk forecasting, end-to-end cloud FIR management, and role-based officer performance analytics.",
+            tags: ["React 19", "Node.js", "Zoho Catalyst", "QuickML AI", "Leaflet GIS", "Serverless", "OAuth 2.0", "Vite", "Tailwind", "CSS"],
+            link: "https://ksp-crime-intelligence-50044050041.development.catalystappsail.in", // Assuming this link based on description, or placeholder
+            github: "https://github.com/m-agrawal09/ksp-crime-intelligence-platform", // Placeholder to profile if specific repo unknown
+            collaboration: "Developed in collaboration with Medhavi Agrawal"
+        },
+        {
             title: "ScrollEats",
             subtitle: "A Full Stack Application inspired by Instagram Reels and Zomato",
             description: "Built a full-stack food discovery and ordering platform where users browse food reels, like/save content, and place orders. Food partners can manage their profiles, upload reels, and list food items. The application includes authentication, role-based access, media uploads, and real-time interaction features.",
@@ -27,13 +29,13 @@ const Projects = () => {
             github: "https://github.com/softdev-kartik-singhal", // Placeholder to profile if specific repo unknown
         },
         {
-            title: "Simon Says Game",
-            subtitle: "Interactive Memory Challenge",
-            description: "Interactive memory game built using HTML, CSS, and JavaScript with dynamic color sequences and responsive design.",
-            tags: ["HTML", "CSS", "JavaScript"],
-            link: "https://simon-says-game-ynh1.onrender.com", // Placeholder assumption
-            github: "https://github.com/softdev-kartik-singhal",
-        },
+            title: "Wanderlust",
+            subtitle: "A Travel Accommodation Website",
+            description: "Developed a full stack travel listing platform using Node.js, Express, and MongoDB Atlas. Implemented user authentication with Passport.js and deployed on Render. Features CRUD operations and full-stack development practices.",
+            tags: ["Node.js", "Express", "MongoDB", "Passport.js"],
+            link: "https://wanderlust-vj6s.onrender.com", // Assuming this link based on description, or placeholder
+            github: "https://github.com/softdev-kartik-singhal", // Placeholder to profile if specific repo unknown
+        }
     ];
 
     return (
@@ -62,7 +64,7 @@ const Projects = () => {
                                         {project.description}
                                     </p>
 
-                                    <div className="flex flex-wrap gap-2 mb-8">
+                                    <div className="flex flex-wrap gap-2 mb-6">
                                         {project.tags.map((tag, idx) => (
                                             <span
                                                 key={idx}
@@ -72,6 +74,15 @@ const Projects = () => {
                                             </span>
                                         ))}
                                     </div>
+
+                                    {project.collaboration && (
+                                        <div className="flex items-center gap-2 mb-6 text-xs text-slate-400 font-medium">
+                                            <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                            <span>{project.collaboration}</span>
+                                        </div>
+                                    )}
 
                                     <div className="flex gap-4">
                                         <Link
