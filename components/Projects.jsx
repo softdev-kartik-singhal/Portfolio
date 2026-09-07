@@ -8,8 +8,8 @@ const Projects = () => {
             subtitle: "Serverless crime intelligence platform with GIS spatial analytics and AI-driven insights.",
             description: "Built an enterprise-grade law enforcement intelligence platform that processes and visualizes real-time CCTNS crime records. Features an interactive GIS mapping interface for spatial hotspot detection, an AI copilot powered by QuickML for natural language database querying and predictive risk forecasting, end-to-end cloud FIR management, and role-based officer performance analytics.",
             tags: ["React 19", "Node.js", "Zoho Catalyst", "QuickML AI", "Leaflet GIS", "Serverless", "OAuth 2.0", "Vite", "Tailwind", "CSS"],
-            link: "https://ksp-crime-intelligence-50044050041.development.catalystappsail.in", // Assuming this link based on description, or placeholder
-            github: "https://github.com/m-agrawal09/ksp-crime-intelligence-platform", // Placeholder to profile if specific repo unknown
+            link: "",//"https://ksp-crime-intelligence-50044050041.development.catalystappsail.in", // Assuming this link based on description, or placeholder
+            github: "",//"https://github.com/m-agrawal09/ksp-crime-intelligence-platform", // Placeholder to profile if specific repo unknown
             collaboration: "Developed in collaboration with Medhavi Agrawal"
         },
         {
