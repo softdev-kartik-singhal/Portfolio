@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: kartik-portfolio
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0

@@ -1,0 +1,14 @@
+{
+  "name": "kartik-portfolio",
+  "version": "1.0.0",
+  "description": "Kartik Singhal Portfolio Website",
+  "main": "server.js",
+  "scripts": {
+    "build": "echo \"Build complete\"",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
