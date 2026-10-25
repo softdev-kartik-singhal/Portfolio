@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Kartik Singhal — Full Stack Developer &amp; Software Engineer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    :root {
+      --bg-canvas: #F8F7F3;
+      --bg-section: #FFFFFF;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F4F3EE;
+      --border-color: #E6E3DC;
+      --text-primary: #181818;
+      --text-secondary: #4B5563;
+      --accent-color: #2855D9;
+      --muted-color: #71717A;
+      --header-bg: rgba(248, 247, 243, 0.92);
+    }
+
+    html.dark {
+      color-scheme: dark;
+      --bg-canvas: #171717;
+      --bg-section: #1D1D1D;
+      --bg-surface: #242424;
+      --bg-subtle: #1F1F1F;
+      --border-color: #353535;
+      --text-primary: #F3F0EA;
+      --text-secondary: #B6B4AF;
+      --accent-color: #8CA7FF;
+      --muted-color: #999999;
+      --header-bg: rgba(23, 23, 23, 0.92);
+    }
+
+    body, header, section, div, button, a {
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    html.dark body {
+      background-color: var(--bg-canvas) !important;
+      color: var(--text-primary) !important;
+    }
+
+    html.dark header {
+      background-color: var(--header-bg) !important;
+      border-color: var(--border-color) !important;
+    }
+
+    /* All white cards, articles, containers, buttons, and links */
+    html.dark .bg-white,
+    html.dark article {
+      background-color: var(--bg-surface) !important;
+      border-color: var(--border-color) !important;
+    }
+
+    /* Entire alternating sections */
+    html.dark section.bg-white {
+      background-color: var(--bg-section) !important;
+    }
+
+    html.dark section.bg-light-canvas {
+      background-color: var(--bg-canvas) !important;
+    }
+
+    /* Subtle surface elements: tech pills, inner stat containers */
+    html.dark .bg-light-surface-subtle {
+      background-color: var(--bg-subtle) !important;
+      border-color: var(--border-color) !important;
+    }
+
+    /* Contrast nested elements inside dark sections */
+    html.dark section.bg-white .bg-light-surface-subtle,
+    html.dark section.bg-white .bg-white {
+      background-color: var(--bg-surface) !important;
+    }
+
+    html.dark .text-light-text-primary {
+      color: var(--text-primary) !important;
+    }
+
+    html.dark .text-light-text-secondary {
+      color: var(--text-secondary) !important;
+    }
+
+    html.dark .text-muted-meta {
+      color: var(--muted-color) !important;
+    }
+
+    html.dark .border-light-border {
+      border-color: var(--border-color) !important;
+    }
+
+    html.dark .divide-light-border > :not([hidden]) ~ :not([hidden]) {
+      border-color: var(--border-color) !important;
+    }
+
+    html.dark .text-light-accent {
+      color: var(--accent-color) !important;
+    }
+
+    html.dark .bg-light-accent {
+      background-color: var(--accent-color) !important;
+      color: #171717 !important;
+    }
+
+    html.dark .bg-light-accent:hover {
+      background-color: #FFFFFF !important;
+      color: #171717 !important;
+    }
+
+    html.dark tr.hover\:bg-light-canvas:hover {
+      background-color: var(--bg-surface) !important;
+    }
+
+    html.dark .hover\:border-light-accent:hover {
+      border-color: var(--accent-color) !important;
+    }
+
+    html.dark .hover\:text-light-accent:hover {
+      color: var(--accent-color) !important;
+    }
+
+    html.dark .hover\:text-light-text-primary:hover {
+      color: var(--text-primary) !important;
+    }
+
+    html.dark .hover\:border-light-text-primary:hover {
+      border-color: var(--text-primary) !important;
+    }
+
+    html.dark #case-modal > div {
+      background-color: var(--bg-surface) !important;
+      border-color: var(--border-color) !important;
+      color: var(--text-primary) !important;
+    }
+
+    html.dark #case-modal .bg-light-surface-subtle {
+      background-color: var(--bg-subtle) !important;
+      border-color: var(--border-color) !important;
+    }
+
+    html.dark #case-modal button {
+      background-color: var(--bg-surface) !important;
+      border-color: var(--border-color) !important;
+      color: var(--text-primary) !important;
+    }
+
+    html.dark .shadow-sm,
+    html.dark .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4) !important;
+    }
+  </style>
+<script>
+    (function() {
+      const saved = localStorage.getItem('portfolio-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "light-canvas": "var(--bg-canvas)",
+            "light-section": "var(--bg-section)",
+            "light-surface": "var(--bg-surface)",
+            "light-surface-subtle": "var(--bg-subtle)",
+            "light-border": "var(--border-color)",
+            "light-text-primary": "var(--text-primary)",
+            "light-text-secondary": "var(--text-secondary)",
+            "light-accent": "var(--accent-color)",
+            "muted-meta": "var(--muted-color)"
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-light-canvas text-light-text-primary font-sans selection:bg-light-accent selection:text-white antialiased">
+<!-- STICKY HEADER -->
+<header class="fixed top-0 w-full z-50 bg-[#F8F7F3]/90 backdrop-blur-md border-b border-light-border transition-colors">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between gap-6 lg:gap-8">
+<div class="flex items-center gap-3 shrink-0">
+<a class="font-serif text-lg tracking-wide uppercase font-semibold text-light-text-primary hover:text-light-accent transition-colors" href="#">
+          Kartik Singhal
+        </a>
+<span class="text-light-border">/</span>
+<span class="font-mono text-xs tracking-widest uppercase text-light-text-secondary">Full Stack Developer</span>
+</div>
+<nav class="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-7">
+<a class="text-sm font-medium text-light-accent transition-colors" href="#work">Work</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#index">Index</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#archive">Engineering</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#cloud">Cloud</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#achievements">Achievements</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#toolkit">Toolkit</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#experience">Experience</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#education">Education</a>
+<a class="text-sm font-medium text-light-text-secondary hover:text-light-text-primary transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-3 sm:gap-4 shrink-0 pl-6 lg:pl-8 border-l border-light-border">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 border border-light-border rounded text-xs font-mono tracking-wider uppercase text-light-text-primary hover:border-light-accent hover:text-light-accent transition-all bg-white" href="https://drive.google.com/file/d/1ZmgBHrZc7flQQM9z173rHaKO-0C1uR3m/view?usp=share_link" target="_blank" rel="noopener noreferrer">
+<span>Resume</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+<button id="theme-toggle-btn" class="p-2 border border-light-border rounded text-light-text-secondary hover:text-light-text-primary transition-colors bg-white shadow-sm flex items-center justify-center cursor-pointer" onclick="toggleTheme()" title="Toggle Theme" type="button" aria-label="Toggle theme">
+<span id="theme-icon" class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full pt-20">
+<!-- HERO SECTION (bg #F8F7F3) -->
+<section class="w-full bg-light-canvas border-b border-light-border py-20 lg:py-28" id="work">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<div class="lg:col-span-7 flex flex-col items-start gap-6">
+<span class="font-mono text-xs tracking-widest uppercase text-muted-meta">
+              Full Stack Developer · MERN Stack · AI/ML
+            </span>
+<h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-light-text-primary font-medium tracking-tight leading-[1.15]">
+              I build ideas into <span class="italic text-light-accent">production-ready products.</span>
+</h1>
+<p class="text-lg text-light-text-secondary font-sans leading-relaxed max-w-xl">
+              Third-year Computer Science &amp; Engineering student at MITS Gwalior (CGPA 7.54/10). I build full-stack web applications, REST APIs, and intelligent systems using the MERN stack, Python, and modern web technologies.
+            </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 bg-light-accent text-white font-medium text-sm rounded hover:bg-blue-700 transition-colors shadow-sm" href="#selected-work">
+<span>Explore my work</span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 border border-light-border text-light-text-primary bg-white font-medium text-sm rounded hover:border-light-text-primary transition-colors shadow-sm" href="https://drive.google.com/file/d/1ZmgBHrZc7flQQM9z173rHaKO-0C1uR3m/view?usp=share_link" target="_blank" rel="noopener noreferrer">
+<span>Download resume</span>
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-white border border-light-border p-3 rounded shadow-xl relative group">
+<img alt="ScrollEats Production Food Exploration &amp; Ordering Platform" class="w-full h-auto rounded object-cover border border-light-border" src="./assets/scrolleats_hero_preview.jpg"/>
+<div class="mt-3 flex items-center justify-between px-2 text-xs font-mono text-muted-meta">
+
+<span class="text-light-text-secondary font-medium">MERN / REACT · NODE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CREDIBILITY STRIP (bg #FFFFFF) -->
+<section class="w-full bg-white border-b border-light-border py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-light-border">
+<div class="flex flex-col md:px-8 first:pl-0">
+<span class="font-serif text-3xl lg:text-4xl font-semibold text-light-text-primary tracking-tight">7.54</span>
+<span class="font-mono text-xs uppercase tracking-wider text-light-accent font-medium mt-1">CGPA at MITS</span>
+<span class="text-sm text-light-text-secondary mt-0.5">Sem 3 SGPA: 8.34</span>
+</div>
+<div class="flex flex-col pt-6 md:pt-0 md:px-8">
+<span class="font-serif text-3xl lg:text-4xl font-semibold text-light-text-primary tracking-tight">95.36%</span>
+<span class="font-mono text-xs uppercase tracking-wider text-light-accent font-medium mt-1">Naukri Young Turks</span>
+<span class="text-sm text-light-text-secondary mt-0.5">Percentile among 5L participants</span>
+</div>
+<div class="flex flex-col pt-6 md:pt-0 md:px-8">
+<span class="font-serif text-3xl lg:text-4xl font-semibold text-light-text-primary tracking-tight">Finalist</span>
+<span class="text-sm text-light-text-secondary mt-0.5">National-level hackathons</span>
+<span class="font-mono text-xs uppercase tracking-wider text-light-accent font-medium mt-1">HackxMUJ 4.O</span>
+<span class="font-mono text-xs uppercase tracking-wider text-light-accent font-medium mt-1">VoidHacks8.O</span>
+<span class="font-mono text-xs uppercase tracking-wider text-light-accent font-medium mt-1">HackwithHyderabad</span>
+</div>
+<div class="flex flex-col pt-6 md:pt-0 md:px-8">
+<span class="font-serif text-3xl lg:text-4xl font-semibold text-light-text-primary tracking-tight">SIH '25</span>
+<span class="font-mono text-xs uppercase tracking-wider text-light-accent font-medium mt-1">Internal Round Qualifier</span>
+<span class="text-sm text-light-text-secondary mt-0.5">Smart India Hackathon 2025</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SELECTED WORK SECTION (bg #F8F7F3) -->
+<section class="w-full bg-light-canvas border-b border-light-border py-24" id="selected-work">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-light-border">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Featured Portfolio</span>
+<h2 class="font-serif text-3xl lg:text-4xl font-medium text-light-text-primary mt-1">Selected Projects</h2>
+</div>
+<p class="text-sm text-light-text-secondary max-w-md font-sans">
+            Production full-stack applications, AI-powered platforms, and hackathon-winning solutions.
+          </p>
+</div>
+<!-- Project 1: Crime Analytics -->
+<article class="bg-white border border-light-border rounded p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center shadow-sm">
+<div class="lg:col-span-6 flex flex-col gap-4">
+<span class="font-mono text-xs uppercase tracking-widest text-light-accent font-semibold">Karnataka State Police Datathon 2026</span>
+<h3 class="font-serif text-2xl lg:text-3xl font-medium text-light-text-primary leading-snug">
+              AI-Driven Crime Analytics &amp; Visualization Platform
+            </h3>
+<p class="text-base text-light-text-secondary leading-relaxed">
+              Engineering an AI-powered crime intelligence platform for the Karnataka State Police, integrating geospatial crime maps, officer performance dashboards, and AI-driven crime forecasting.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">React.js</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Zoho Catalyst</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">AI / ML</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Python</span>
+</div>
+<div class="pt-4">
+<button class="inline-flex items-center gap-1.5 text-sm font-medium text-light-accent hover:underline" onclick="openModal('crime-modal')">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-6">
+<div class="border border-light-border rounded overflow-hidden shadow-md">
+<img alt="Spatio-Temporal Crime Analytics Platform Interface" class="w-full h-auto object-cover" src="./spatio_temporal_crime_analytics_platform_dashboard_interface_clean_modern/screen.png"/>
+</div>
+</div>
+</article>
+<article class="bg-white border border-light-border rounded p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center shadow-sm">
+<div class="lg:col-span-6 order-2 lg:order-1">
+<div class="border border-light-border rounded overflow-hidden shadow-md">
+<img alt="ScrollEats Platform Interface" class="w-full h-auto object-cover" src="./assets/scrolleats_hero_preview.jpg"/>
+</div>
+</div>
+<div class="lg:col-span-6 flex flex-col gap-4 order-1 lg:order-2">
+<span class="font-mono text-xs uppercase tracking-widest text-light-accent font-semibold">Full Stack MERN Architecture</span>
+<h3 class="font-serif text-2xl lg:text-3xl font-medium text-light-text-primary leading-snug">
+              ScrollEats – Short-Form Food Content &amp; Ordering Platform
+            </h3>
+<p class="text-base text-light-text-secondary leading-relaxed">
+              Built a full-stack food exploration and ordering platform inspired by Instagram Reels and Zomato, featuring role-based authentication, reels, likes/saves, and partner-managed listings.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">MongoDB</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Express.js</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">React.js</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Node.js</span>
+</div>
+<div class="pt-4">
+<button class="inline-flex items-center gap-1.5 text-sm font-medium text-light-accent hover:underline" onclick="openModal('scrolleats-modal')">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Project 3: Stokro -->
+<article class="bg-white border border-light-border rounded p-8 lg:p-10 flex flex-col md:flex-row justify-between gap-8 shadow-sm">
+<div class="flex flex-col gap-3 max-w-2xl">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">FinTech &amp; Virtual Trading</span>
+<h3 class="font-serif text-2xl font-medium text-light-text-primary">
+              Stokro – Modern Stock Trading Experience
+            </h3>
+<p class="text-base text-light-text-secondary leading-relaxed">
+              Built a stock trading web application inspired by Zerodha, enabling users to explore real-time market data, manage virtual investments, and track portfolio performance.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">React.js</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Tailwind CSS</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Node.js</span>
+<span class="font-mono text-xs px-2.5 py-1 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">REST APIs</span>
+</div>
+</div>
+<div class="flex items-end">
+<button class="inline-flex items-center gap-1.5 text-sm font-medium text-light-accent hover:underline" onclick="openModal('stokro-modal')">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<article class="bg-white border border-light-border rounded p-8 flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Smart Automation · Hackathon</span>
+<h3 class="font-serif text-xl font-medium text-light-text-primary mt-2 mb-3">
+                Smart Public Transit Telemetry &amp; Fleet Routing Hub
+              </h3>
+<p class="text-sm text-light-text-secondary leading-relaxed mb-4">
+                Designed an intelligent public transportation optimization platform for DropHack'26, successfully qualifying for Smart India Hackathon 2025 internal selection round.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="font-mono text-xs px-2.5 py-0.5 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Python</span>
+<span class="font-mono text-xs px-2.5 py-0.5 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">REST APIs</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 text-sm font-medium text-light-accent hover:underline" onclick="openModal('transit-modal')">
+<span>View Project Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</article>
+<article class="bg-white border border-light-border rounded p-8 flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Interactive AR &amp; AI</span>
+<h3 class="font-serif text-xl font-medium text-light-text-primary mt-2 mb-3">
+                Augmented Reality Lenses &amp; Generative AI Systems
+              </h3>
+<p class="text-sm text-light-text-secondary leading-relaxed mb-4">
+                Hands-on spatial computing and generative AI development through workshops with Snap AR, BharatXR, and the Synaptix AI Hackathon at Shaastra, IIT Madras.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="font-mono text-xs px-2.5 py-0.5 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Snap AR</span>
+<span class="font-mono text-xs px-2.5 py-0.5 bg-light-surface-subtle border border-light-border text-light-text-secondary rounded">Generative AI</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 text-sm font-medium text-light-accent hover:underline" onclick="openModal('snapar-modal')">
+<span>View Project Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</article>
+</div>
+</div>
+</section>
+<!-- ANALYSIS INDEX (bg #FFFFFF) -->
+<section class="w-full bg-white border-b border-light-border py-24" id="index">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-light-border">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Systematic Inventory</span>
+<h2 class="font-serif text-3xl font-medium text-light-text-primary mt-1">Project Index</h2>
+</div>
+<span class="font-mono text-xs text-light-text-secondary">5 Featured Projects</span>
+</div>
+<div class="overflow-x-auto border border-light-border rounded bg-white shadow-sm">
+<table class="w-full text-left text-sm border-collapse">
+<thead>
+<tr class="border-b border-light-border text-xs font-mono uppercase text-muted-meta bg-light-surface-subtle">
+<th class="py-3.5 px-6 font-normal">Ref</th>
+<th class="py-3.5 px-6 font-normal">Project</th>
+<th class="py-3.5 px-6 font-normal">Domain</th>
+<th class="py-3.5 px-6 font-normal">Core Stack</th>
+<th class="py-3.5 px-6 font-normal">Focus Area</th>
+<th class="py-3.5 px-6 text-right font-normal">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-light-border font-sans">
+<tr class="hover:bg-light-canvas transition-colors">
+<td class="py-4 px-6 font-mono text-xs text-muted-meta">#01</td>
+<td class="py-4 px-6 font-medium text-light-text-primary">AI-Driven Crime Analytics Platform</td>
+<td class="py-4 px-6 text-light-text-secondary">Civic &amp; Public Safety</td>
+<td class="py-4 px-6 font-mono text-xs text-light-text-secondary">React · Zoho Catalyst · AI/ML</td>
+<td class="py-4 px-6 text-light-text-secondary">Geospatial Crime Intelligence</td>
+<td class="py-4 px-6 text-right">
+<button class="font-mono text-xs text-light-accent font-semibold hover:underline" onclick="openModal('crime-modal')">Review →</button>
+</td>
+</tr>
+<tr class="hover:bg-light-canvas transition-colors">
+<td class="py-4 px-6 font-mono text-xs text-muted-meta">#02</td>
+<td class="py-4 px-6 font-medium text-light-text-primary">ScrollEats – Food Content Platform</td>
+<td class="py-4 px-6 text-light-text-secondary">Full Stack MERN</td>
+<td class="py-4 px-6 font-mono text-xs text-light-text-secondary">MongoDB · Express · React · Node</td>
+<td class="py-4 px-6 text-light-text-secondary">Short-Form Content &amp; Ordering</td>
+<td class="py-4 px-6 text-right">
+<button class="font-mono text-xs text-light-accent font-semibold hover:underline" onclick="openModal('scrolleats-modal')">Review →</button>
+</td>
+</tr>
+<tr class="hover:bg-light-canvas transition-colors">
+<td class="py-4 px-6 font-mono text-xs text-muted-meta">#03</td>
+<td class="py-4 px-6 font-medium text-light-text-primary">Stokro – Stock Trading Experience</td>
+<td class="py-4 px-6 text-light-text-secondary">FinTech &amp; Trading</td>
+<td class="py-4 px-6 font-mono text-xs text-light-text-secondary">React · Node · REST APIs</td>
+<td class="py-4 px-6 text-light-text-secondary">Virtual Portfolio Simulation</td>
+<td class="py-4 px-6 text-right">
+<button class="font-mono text-xs text-light-accent font-semibold hover:underline" onclick="openModal('stokro-modal')">Review →</button>
+</td>
+</tr>
+<tr class="hover:bg-light-canvas transition-colors">
+<td class="py-4 px-6 font-mono text-xs text-muted-meta">#04</td>
+<td class="py-4 px-6 font-medium text-light-text-primary">Smart Transit Telemetry Hub</td>
+<td class="py-4 px-6 text-light-text-secondary">Smart Automation</td>
+<td class="py-4 px-6 font-mono text-xs text-light-text-secondary">Python · REST APIs · DSA</td>
+<td class="py-4 px-6 text-light-text-secondary">Fleet Route Optimization</td>
+<td class="py-4 px-6 text-right">
+<button class="font-mono text-xs text-light-accent font-semibold hover:underline" onclick="openModal('transit-modal')">Review →</button>
+</td>
+</tr>
+<tr class="hover:bg-light-canvas transition-colors">
+<td class="py-4 px-6 font-mono text-xs text-muted-meta">#05</td>
+<td class="py-4 px-6 font-medium text-light-text-primary">AR Lenses &amp; Generative AI</td>
+<td class="py-4 px-6 text-light-text-secondary">Spatial Computing &amp; AI</td>
+<td class="py-4 px-6 font-mono text-xs text-light-text-secondary">Snap AR · Lens Studio · AI</td>
+<td class="py-4 px-6 text-light-text-secondary">Interactive AR Experiences</td>
+<td class="py-4 px-6 text-right">
+<button class="font-mono text-xs text-light-accent font-semibold hover:underline" onclick="openModal('snapar-modal')">Review →</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ENGINEERING & HARDWARE ARCHIVE (bg #F8F7F3) -->
+<section class="w-full bg-light-canvas border-b border-light-border py-24" id="archive">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="pb-6 border-b border-light-border">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Interdisciplinary</span>
+<h2 class="font-serif text-3xl font-medium text-light-text-primary mt-1">Certifications &amp; Training</h2>
+<p class="text-sm text-light-text-secondary mt-1">Professional development through verified courses, workshops, and hackathons.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 bg-white border border-light-border rounded flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-mono text-xs text-muted-meta uppercase">Full Stack Web Dev</span>
+<h3 class="font-serif text-xl font-medium text-light-text-primary mt-2 mb-3">Delta – Full Stack Web Development</h3>
+<p class="text-sm text-light-text-secondary leading-relaxed">
+                Comprehensive full-stack web development program covering MERN stack, REST APIs, authentication systems, and deployment at Apna College.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-light-border flex items-center justify-between font-mono text-xs text-muted-meta">
+<span>Apna College</span>
+<span class="material-symbols-outlined text-[16px] text-light-accent">school</span>
+</div>
+</div>
+<div class="p-8 bg-white border border-light-border rounded flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-mono text-xs text-muted-meta uppercase">Generative AI</span>
+<h3 class="font-serif text-xl font-medium text-light-text-primary mt-2 mb-3">Generative AI Mastery Workshop</h3>
+<p class="text-sm text-light-text-secondary leading-relaxed">
+                Advanced generative AI prompt engineering and application development through NxtWave / OpenAI Academy Learning Community.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-light-border flex items-center justify-between font-mono text-xs text-muted-meta">
+<span>NxtWave / OpenAI Academy</span>
+<span class="material-symbols-outlined text-[16px] text-light-accent">smart_toy</span>
+</div>
+</div>
+<div class="p-8 bg-white border border-light-border rounded flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-mono text-xs text-muted-meta uppercase">Augmented Reality</span>
+<h3 class="font-serif text-xl font-medium text-light-text-primary mt-2 mb-3">SnapAR Lens Creation Workshop</h3>
+<p class="text-sm text-light-text-secondary leading-relaxed">
+                Hands-on augmented reality lens creation workshop by Arexa &amp; BharatXR, powered by Snap AR. Built interactive face-tracking AR lenses.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-light-border flex items-center justify-between font-mono text-xs text-muted-meta">
+<span>Arexa &amp; BharatXR</span>
+<span class="material-symbols-outlined text-[16px] text-light-accent">view_in_ar</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- GOOGLE CLOUD ARCADE 3X LEGEND TIER MILESTONE -->
+<section class="w-full bg-light-canvas border-b border-light-border py-20 lg:py-24" id="cloud">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-light-border">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-light-accent font-semibold">Cloud Infrastructure &amp; Competency</span>
+<h2 class="font-serif text-3xl lg:text-4xl font-medium text-light-text-primary mt-1">Google Cloud Arcade — 3x Legend Tier</h2>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono text-xs px-3 py-1.5 bg-white border border-light-border text-light-accent font-semibold rounded shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-light-accent">verified</span>
+<span>Google Cloud Skills Boost</span>
+</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<div class="lg:col-span-8 bg-white border border-light-border rounded p-8 lg:p-10 flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="p-3 rounded bg-light-surface-subtle border border-light-border text-light-accent flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">cloud_done</span>
+</span>
+<div>
+<h3 class="font-serif text-2xl font-medium text-light-text-primary">Google Cloud Arcade Legend (3x)</h3>
+<span class="font-mono text-xs text-muted-meta">Arcade Legend Cohort · 500+ Hands-On Production Labs</span>
+</div>
+</div>
+<p class="text-base text-light-text-secondary leading-relaxed mt-2">
+            Achieved the top-echelon <strong class="text-light-text-primary">Legend Tier ranking across 3 consecutive Google Cloud Arcade seasons</strong>, solving and deploying over <strong class="text-light-text-primary">500+ hands-on production labs</strong> on Google Cloud Skills Boost (Qwiklabs). Validated deep operational capabilities in containerized microservices orchestration, serverless compute, identity governance, data pipelines, and infrastructure management.
+          </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 mt-6 border-t border-light-border">
+<div class="p-4 bg-light-surface-subtle border border-light-border rounded">
+<span class="font-mono text-xs uppercase text-muted-meta block">Arcade Standing</span>
+<span class="font-serif text-2xl font-bold text-light-accent mt-0.5 block">3x Legend</span>
+<span class="text-xs text-light-text-secondary">Highest arcade milestone</span>
+</div>
+<div class="p-4 bg-light-surface-subtle border border-light-border rounded">
+<span class="font-mono text-xs uppercase text-muted-meta block">Completed Labs</span>
+<span class="font-serif text-2xl font-bold text-light-text-primary mt-0.5 block">500+</span>
+<span class="text-xs text-light-text-secondary">Hands-on Qwiklabs</span>
+</div>
+<div class="p-4 bg-light-surface-subtle border border-light-border rounded">
+<span class="font-mono text-xs uppercase text-muted-meta block">Skill Badges</span>
+<span class="font-serif text-2xl font-bold text-light-accent mt-0.5 block">Multi-Track</span>
+<span class="text-xs text-light-text-secondary">DevOps, Security &amp; Data</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 bg-white border border-light-border rounded p-8 flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-mono text-xs uppercase tracking-wider text-muted-meta block pb-3 border-b border-light-border">GCP Hands-On Competencies</span>
+<ul class="space-y-3.5 text-sm text-light-text-secondary font-sans mt-4">
+<li class="flex justify-between items-center">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-light-accent">check_circle</span> Compute &amp; Containers</span>
+<span class="font-mono text-xs text-muted-meta font-medium">GKE, Compute Engine</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-light-accent">check_circle</span> Serverless &amp; Microservices</span>
+<span class="font-mono text-xs text-muted-meta font-medium">Cloud Run, Functions</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-light-accent">check_circle</span> IAM &amp; Governance</span>
+<span class="font-mono text-xs text-muted-meta font-medium">Roles &amp; Service Accounts</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-light-accent">check_circle</span> Data &amp; Storage</span>
+<span class="font-mono text-xs text-muted-meta font-medium">BigQuery, Cloud Storage</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-light-accent">check_circle</span> Cloud Networking</span>
+<span class="font-mono text-xs text-muted-meta font-medium">VPC, Cloud DNS</span>
+</li>
+</ul>
+</div>
+<div class="pt-6 mt-6 border-t border-light-border">
+<a class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-light-border rounded text-xs font-mono tracking-wider uppercase text-light-text-primary hover:border-light-accent hover:text-light-accent transition-all bg-light-surface-subtle" href="https://www.skills.google/public_profiles/5152cdf1-d3be-45cc-b618-81ad95db9f1f" rel="noopener noreferrer" target="_blank">
+<span>View Cloud Skills Profile</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ACHIEVEMENTS LEDGER (bg #FFFFFF) -->
+<section class="w-full bg-white border-b border-light-border py-24" id="achievements">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="pb-6 border-b border-light-border">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Recognition</span>
+<h2 class="font-serif text-3xl font-medium text-light-text-primary mt-1">Verified Achievements Ledger</h2>
+<p class="text-sm text-light-text-secondary mt-1">National hackathons, competitive rankings, and campus leadership recognition.</p>
+</div>
+<div class="border border-light-border rounded bg-white divide-y divide-light-border shadow-sm">
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">Google Cloud Arcade — 3x Legend Tier</div>
+<div class="text-sm text-light-text-secondary mt-0.5">Achieved highest Legend milestone across 3 consecutive Arcade seasons, completing 500+ production hands-on cloud labs</div>
+</div>
+<span class="font-mono text-xs text-light-accent font-semibold sm:text-right">3x Legend · 500+ Labs</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">Karnataka State Police Datathon 2026</div>
+<div class="text-sm text-light-text-secondary mt-0.5">National Police Datathon · AI-driven crime analytics &amp; geospatial visualization</div>
+</div>
+<span class="font-mono text-xs text-light-accent font-semibold sm:text-right">Rank 28 out of 1500+ Teams · 2026</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">VoidHacks 8.O</div>
+<div class="text-sm text-light-text-secondary mt-0.5">National-level hackathon finalist in collaboration with Commissionerate of Police, Indore at SVVV, Indore</div>
+</div>
+<span class="font-mono text-xs text-light-accent font-semibold sm:text-right">Finalist</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">HackwithHyderabad Hackathon</div>
+<div class="text-sm text-light-text-secondary mt-0.5">National-level hackathon finalist, demonstrating problem-solving and collaborative software skills</div>
+</div>
+<span class="font-mono text-xs text-light-accent font-semibold sm:text-right">Finalist</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">HackxMUJ 4.O</div>
+<div class="text-sm text-light-text-secondary mt-0.5">National level Hackathon at Manipal University, Jaipur</div>
+</div>
+<span class="font-mono text-xs text-light-accent font-semibold sm:text-right">Semi Finalist</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">Naukri Campus Young Turks 2025</div>
+<div class="text-sm text-light-text-secondary mt-0.5">95.36 percentile among 5 lakh participants in national aptitude assessment</div>
+</div>
+<span class="font-mono text-xs text-light-accent font-semibold sm:text-right">95.36 Percentile</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">Smart India Hackathon 2025</div>
+<div class="text-sm text-light-text-secondary mt-0.5">Qualified the internal selection round for SIH'25</div>
+</div>
+<span class="font-mono text-xs text-light-accent font-semibold sm:text-right">Internal Round Qualifier</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">Internshala Student Partner (ISP 53)</div>
+<div class="text-sm text-light-text-secondary mt-0.5">Represented Internshala and contributed to student engagement initiatives at MITS Gwalior</div>
+</div>
+<span class="font-mono text-xs text-muted-meta sm:text-right">Campus Ambassador</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">Synaptix AI Hackathon – Shaastra, IIT Madras</div>
+<div class="text-sm text-light-text-secondary mt-0.5">Generative AI and spatial computing hackathon at IIT Madras tech festival</div>
+</div>
+<span class="font-mono text-xs text-muted-meta sm:text-right">Participant · 2025</span>
+</div>
+<div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="font-serif text-lg font-medium text-light-text-primary">DropHack'26 – Smart Automation Hackathon</div>
+<div class="text-sm text-light-text-secondary mt-0.5">Hackathon participation in Smart Automation &amp; Public Transportation</div>
+</div>
+<span class="font-mono text-xs text-muted-meta sm:text-right">Qualifier</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SKILLS & TOOLKIT (bg #F8F7F3) -->
+<section class="w-full bg-light-canvas border-b border-light-border py-24" id="toolkit">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="pb-6 border-b border-light-border">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Capabilities</span>
+<h2 class="font-serif text-3xl font-medium text-light-text-primary mt-1">Skills &amp; Technical Toolkit</h2>
+<p class="text-sm text-light-text-secondary mt-1">Technical competencies spanning full-stack development, AI/ML systems, and engineering fundamentals.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="p-8 bg-white border border-light-border rounded shadow-sm">
+<h3 class="font-serif text-lg font-medium text-light-text-primary mb-4 pb-2 border-b border-light-border">Languages &amp; Databases</h3>
+<ul class="space-y-2 text-sm text-light-text-secondary font-sans">
+<li class="flex justify-between items-center"><span>JavaScript (ES6+)</span><span class="font-mono text-xs text-light-accent font-semibold">Primary</span></li>
+<li class="flex justify-between items-center"><span>Python</span><span class="font-mono text-xs text-muted-meta">Advanced</span></li>
+<li class="flex justify-between items-center"><span>SQL (MySQL, PostgreSQL)</span><span class="font-mono text-xs text-muted-meta">Relational</span></li>
+<li class="flex justify-between items-center"><span>MongoDB</span><span class="font-mono text-xs text-muted-meta">NoSQL</span></li>
+<li class="flex justify-between items-center"><span>C / C++</span><span class="font-mono text-xs text-muted-meta">Core</span></li>
+</ul>
+</div>
+<div class="p-8 bg-white border border-light-border rounded shadow-sm">
+<h3 class="font-serif text-lg font-medium text-light-text-primary mb-4 pb-2 border-b border-light-border">Frontend Development</h3>
+<ul class="space-y-2 text-sm text-light-text-secondary font-sans">
+<li class="flex justify-between items-center"><span>React.js</span><span class="font-mono text-xs text-light-accent font-semibold">Primary</span></li>
+<li class="flex justify-between items-center"><span>Tailwind CSS</span><span class="font-mono text-xs text-muted-meta">Styling</span></li>
+<li class="flex justify-between items-center"><span>HTML5 / Semantic Layouts</span><span class="font-mono text-xs text-muted-meta">Markup</span></li>
+<li class="flex justify-between items-center"><span>CSS3 &amp; Responsive UI</span><span class="font-mono text-xs text-muted-meta">Design</span></li>
+<li class="flex justify-between items-center"><span>Bootstrap</span><span class="font-mono text-xs text-muted-meta">Framework</span></li>
+</ul>
+</div>
+<div class="p-8 bg-white border border-light-border rounded shadow-sm">
+<h3 class="font-serif text-lg font-medium text-light-text-primary mb-4 pb-2 border-b border-light-border">Backend &amp; Architecture</h3>
+<ul class="space-y-2 text-sm text-light-text-secondary font-sans">
+<li class="flex justify-between items-center"><span>Node.js</span><span class="font-mono text-xs text-light-accent font-semibold">Runtime</span></li>
+<li class="flex justify-between items-center"><span>Express.js</span><span class="font-mono text-xs text-muted-meta">Backend</span></li>
+<li class="flex justify-between items-center"><span>RESTful API Architecture</span><span class="font-mono text-xs text-muted-meta">APIs</span></li>
+<li class="flex justify-between items-center"><span>MERN Stack Integration</span><span class="font-mono text-xs text-muted-meta">Full Stack</span></li>
+<li class="flex justify-between items-center"><span>JWT &amp; Authentication</span><span class="font-mono text-xs text-muted-meta">Security</span></li>
+</ul>
+</div>
+<div class="p-8 bg-white border border-light-border rounded shadow-sm">
+<h3 class="font-serif text-lg font-medium text-light-text-primary mb-4 pb-2 border-b border-light-border">AI/ML &amp; Modern Tools</h3>
+<ul class="space-y-2 text-sm text-light-text-secondary font-sans">
+<li class="flex justify-between items-center"><span>AI/ML Model Integration</span><span class="font-mono text-xs text-light-accent font-semibold">Applied</span></li>
+<li class="flex justify-between items-center"><span>LangChain &amp; LLM Workflows</span><span class="font-mono text-xs text-muted-meta">Generative</span></li>
+<li class="flex justify-between items-center"><span>OpenAI &amp; Gemini APIs</span><span class="font-mono text-xs text-muted-meta">APIs</span></li>
+<li class="flex justify-between items-center"><span>Snap AR / Lens Studio</span><span class="font-mono text-xs text-muted-meta">Spatial</span></li>
+<li class="flex justify-between items-center"><span>Zoho Catalyst &amp; Cloud</span><span class="font-mono text-xs text-muted-meta">Deployment</span></li>
+</ul>
+</div>
+<div class="p-8 bg-white border border-light-border rounded shadow-sm">
+<h3 class="font-serif text-lg font-medium text-light-text-primary mb-4 pb-2 border-b border-light-border">Developer Tools &amp; Workflow</h3>
+<ul class="space-y-2 text-sm text-light-text-secondary font-sans">
+<li class="flex justify-between items-center"><span>Git &amp; GitHub</span><span class="font-mono text-xs text-light-accent font-semibold">Daily</span></li>
+<li class="flex justify-between items-center"><span>Postman API Testing</span><span class="font-mono text-xs text-muted-meta">Testing</span></li>
+<li class="flex justify-between items-center"><span>VS Code Workspace</span><span class="font-mono text-xs text-muted-meta">IDE</span></li>
+<li class="flex justify-between items-center"><span>Canva &amp; Visual Design</span><span class="font-mono text-xs text-muted-meta">Media</span></li>
+<li class="flex justify-between items-center"><span>Streamlit Prototyping</span><span class="font-mono text-xs text-muted-meta">Tools</span></li>
+</ul>
+</div>
+<div class="p-8 bg-white border border-light-border rounded shadow-sm">
+<h3 class="font-serif text-lg font-medium text-light-text-primary mb-4 pb-2 border-b border-light-border">Core Engineering &amp; Soft Skills</h3>
+<ul class="space-y-2 text-sm text-light-text-secondary font-sans">
+<li class="flex justify-between items-center"><span>Data Structures &amp; Algorithms</span><span class="font-mono text-xs text-light-accent font-semibold">DSA</span></li>
+<li class="flex justify-between items-center"><span>Object-Oriented Programming</span><span class="font-mono text-xs text-muted-meta">OOP</span></li>
+<li class="flex justify-between items-center"><span>Campus Coordination &amp; Placements</span><span class="font-mono text-xs text-muted-meta">Proven</span></li>
+<li class="flex justify-between items-center"><span>Industry Liaisoning (Infosys)</span><span class="font-mono text-xs text-muted-meta">Leadership</span></li>
+<li class="flex justify-between items-center"><span>Bilingual Communication</span><span class="font-mono text-xs text-muted-meta">Eng / Hindi</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- EXPERIENCE & LEADERSHIP (bg #FFFFFF) -->
+<section class="w-full bg-white border-b border-light-border py-24" id="experience">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="pb-6 border-b border-light-border">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Campus Responsibility</span>
+<h2 class="font-serif text-3xl font-medium text-light-text-primary mt-1">Experience &amp; Leadership Roles</h2>
+<p class="text-sm text-light-text-secondary mt-1">Elected appointments and institutional service at MITS Gwalior.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-8 bg-light-surface-subtle border border-light-border rounded flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-mono text-muted-meta mb-2">
+<span>JANUARY 2026 — PRESENT</span>
+<span class="text-light-accent font-semibold">CAMPUS PLACEMENTS</span>
+</div>
+<h3 class="font-serif text-xl font-medium text-light-text-primary">Training &amp; Placement Coordinator</h3>
+<div class="text-sm font-medium text-light-text-secondary mt-1 mb-3">Training &amp; Placement Cell · MITS Gwalior</div>
+<p class="text-sm text-light-text-secondary leading-relaxed">
+                Coordinating with corporate recruiters for campus hiring and managing placement drives to ensure seamless execution, while facilitating communication between undergraduate students and the institutional T&amp;P administration.
+              </p>
+</div>
+</div>
+<div class="p-8 bg-light-surface-subtle border border-light-border rounded flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-mono text-muted-meta mb-2">
+<span>FEBRUARY 2025 — PRESENT</span>
+<span class="text-light-accent font-semibold">INDUSTRY COLLABORATION</span>
+</div>
+<h3 class="font-serif text-xl font-medium text-light-text-primary">MOU Coordinator – Infosys</h3>
+<div class="text-sm font-medium text-light-text-secondary mt-1 mb-3">Academic-Industry Partnership · MITS Gwalior</div>
+<p class="text-sm text-light-text-secondary leading-relaxed">
+                Spearheading liaison activities and operational communications for the official Infosys academic-industry collaboration, fostering student technical engagement and supporting strategic institutional initiatives.
+              </p>
+</div>
+</div>
+<div class="p-8 bg-light-surface-subtle border border-light-border rounded flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-mono text-muted-meta mb-2">
+<span>2025 — PRESENT</span>
+<span class="text-muted-meta">COMPETITIVE DEV</span>
+</div>
+<h3 class="font-serif text-xl font-medium text-light-text-primary">Hackathon Lead &amp; Finalist</h3>
+<div class="text-sm font-medium text-light-text-secondary mt-1 mb-3">HackwithHyderabad &amp; SIH'25 Qualification</div>
+<p class="text-sm text-light-text-secondary leading-relaxed">
+                Led core engineering design and architecture in high-stakes hackathons, qualifying the internal selection round for Smart India Hackathon 2025 and achieving finalist standing at HackwithHyderabad.
+              </p>
+</div>
+</div>
+<div class="p-8 bg-light-surface-subtle border border-light-border rounded flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-mono text-muted-meta mb-2">
+<span>2024 — 2025</span>
+<span class="text-muted-meta">CAMPUS OUTREACH</span>
+</div>
+<h3 class="font-serif text-xl font-medium text-light-text-primary">Internshala Student Partner (ISP 53)</h3>
+<div class="text-sm font-medium text-light-text-secondary mt-1 mb-3">Internshala Campus Community · MITS Chapter</div>
+<p class="text-sm text-light-text-secondary leading-relaxed">
+                Served as official campus ambassador representing Internshala, driving internship awareness campaigns, student skill-building workshops, and peer mentorship across engineering batches.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EDUCATION (bg #F8F7F3) -->
+<section class="w-full bg-light-canvas border-b border-light-border py-24" id="education">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="pb-6 border-b border-light-border">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Academic Pedagogy</span>
+<h2 class="font-serif text-3xl font-medium text-light-text-primary mt-1">Education &amp; Academic Honors</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<div class="lg:col-span-7 bg-white border border-light-border rounded p-8 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-mono text-muted-meta mb-2">
+<span>2024 — 2028 (IN PROGRESS)</span>
+<span class="text-light-accent font-semibold">UNDERGRADUATE DEGREE</span>
+</div>
+<h3 class="font-serif text-2xl font-medium text-light-text-primary">Madhav Institute of Technology &amp; Science (MITS)</h3>
+<div class="text-sm text-light-text-secondary mt-1 mb-4">Gwalior, Madhya Pradesh · Autonomous (NAAC A++ Accredited)</div>
+<p class="text-base text-light-text-secondary leading-relaxed mb-6">
+                Bachelor of Technology in <strong class="text-light-text-primary">Computer Science Engineering</strong>. Rigorous coursework encompasses Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, MERN Full Stack Architecture, and AI/ML Systems.
+              </p>
+<div class="grid grid-cols-2 gap-4 p-4 bg-light-surface-subtle border border-light-border rounded">
+<div>
+<span class="text-xs font-mono uppercase text-muted-meta">Cumulative CGPA</span>
+<div class="font-serif text-2xl font-semibold text-light-accent mt-0.5">7.54 / 10.00</div>
+<span class="text-xs text-light-text-secondary">Cumulative Grade Point</span>
+</div>
+<div>
+<span class="text-xs font-mono uppercase text-muted-meta">Semester 3 SGPA</span>
+<div class="font-serif text-2xl font-semibold text-light-text-primary mt-0.5">8.34 / 10.00</div>
+<span class="text-xs text-light-text-secondary">Third Semester Performance</span>
+</div>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-light-border text-xs font-mono text-muted-meta flex flex-wrap gap-x-4 gap-y-1">
+<span>Data Structures &amp; Algorithms</span>
+<span>·</span>
+<span>Full Stack Architecture</span>
+<span>·</span>
+<span>DBMS &amp; SQL</span>
+<span>·</span>
+<span>Python &amp; AI Systems</span>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-white border border-light-border rounded p-6 flex flex-col justify-between flex-1 shadow-sm">
+<div>
+<span class="text-xs font-mono uppercase text-muted-meta">CBSE Senior Secondary (Class XII)</span>
+<h4 class="font-serif text-lg font-medium text-light-text-primary mt-1">Physics, Chemistry, Mathematics</h4>
+<p class="text-sm text-light-text-secondary mt-1">Sanskar Public School</p>
+</div>
+<div class="pt-4 border-t border-light-border mt-4 flex items-baseline justify-between">
+<span class="text-xs font-mono text-muted-meta uppercase">Aggregate Score</span>
+<span class="font-serif text-2xl font-semibold text-light-accent">80.8%</span>
+</div>
+</div>
+<div class="bg-white border border-light-border rounded p-6 flex flex-col justify-between flex-1 shadow-sm">
+<div>
+<span class="text-xs font-mono uppercase text-muted-meta">CBSE Secondary (Class X)</span>
+<h4 class="font-serif text-lg font-medium text-light-text-primary mt-1">Secondary School Certificate</h4>
+<p class="text-sm text-light-text-secondary mt-1">Gwalior Glory High School, Gwalior</p>
+</div>
+<div class="pt-4 border-t border-light-border mt-4 flex items-baseline justify-between">
+<span class="text-xs font-mono text-muted-meta uppercase">Aggregate Score</span>
+<span class="font-serif text-2xl font-semibold text-light-text-primary">89.0%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CERTIFICATIONS & CREATIVE SHOWCASE (bg #FFFFFF) -->
+<section class="w-full bg-white border-b border-light-border py-24">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="pb-6 border-b border-light-border">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Verified Credentials &amp; Media</span>
+<h2 class="font-serif text-3xl font-medium text-light-text-primary mt-1">Certifications &amp; Design Showcase</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-6 flex flex-col gap-4">
+<h3 class="font-mono text-xs uppercase tracking-wider text-muted-meta">Technical Credentials</h3>
+<div class="p-5 bg-white border border-light-border rounded flex items-center justify-between shadow-sm">
+<div>
+<div class="font-serif text-base font-medium text-light-text-primary">Delta – Full Stack Web Development</div>
+<div class="text-xs text-light-text-secondary mt-0.5">Apna College · MERN Stack, REST APIs &amp; Production Architecture</div>
+</div>
+<a class="font-mono text-xs text-light-accent font-semibold hover:underline inline-flex items-center gap-1 shrink-0 ml-4" href="https://drive.google.com/file/d/14vgK2If81KSh_2FVW6hu-1Cw7PNXu8gV/view?usp=share_link" rel="noopener noreferrer" target="_blank">
+<span>View Certificate</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<div class="p-5 bg-white border border-light-border rounded flex items-center justify-between shadow-sm">
+<div>
+<div class="font-serif text-base font-medium text-light-text-primary">Generative AI Mastery Workshop</div>
+<div class="text-xs text-light-text-secondary mt-0.5">NxtWave / OpenAI Academy Learning Community</div>
+</div>
+<a class="font-mono text-xs text-light-accent font-semibold hover:underline inline-flex items-center gap-1 shrink-0 ml-4" href="https://drive.google.com/file/d/1OZxorHqoX27eB8A633p6tqekgI1HwccU/view?usp=share_link" rel="noopener noreferrer" target="_blank">
+<span>View Certificate</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<div class="p-5 bg-white border border-light-border rounded flex items-center justify-between shadow-sm">
+<div>
+<div class="font-serif text-base font-medium text-light-text-primary">SnapAR Lens Creation Workshop</div>
+<div class="text-xs text-light-text-secondary mt-0.5">Arexa &amp; BharatXR, powered by Snap AR · Spatial Tracking</div>
+</div>
+<a class="font-mono text-xs text-light-accent font-semibold hover:underline inline-flex items-center gap-1 shrink-0 ml-4" href="https://drive.google.com/file/d/1Xw5u8xA3vSdkKRyXe2BTGY_GQCIb6r2l/view?usp=share_link" rel="noopener noreferrer" target="_blank">
+<span>View Certificate</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<div class="p-5 bg-white border border-light-border rounded flex items-center justify-between shadow-sm">
+<div>
+<div class="font-serif text-base font-medium text-light-text-primary">Synaptix AI Hackathon – Shaastra</div>
+<div class="text-xs text-light-text-secondary mt-0.5">IIT Madras · Generative AI &amp; Spatial Computing</div>
+</div>
+<a class="font-mono text-xs text-light-accent font-semibold hover:underline inline-flex items-center gap-1 shrink-0 ml-4" href="https://drive.google.com/file/d/1_nJh87MlPHJ0vkayYNenHIA6-Il7W-81/view?usp=share_link" rel="noopener noreferrer" target="_blank">
+<span>View Certificate</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-6 flex flex-col gap-4">
+<h3 class="font-mono text-xs uppercase tracking-wider text-muted-meta">Featured Engineering Artifacts</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white border border-light-border rounded p-4 flex flex-col justify-between shadow-sm group">
+<div class="aspect-[4/3] border border-light-border rounded overflow-hidden mb-3 bg-light-surface-subtle">
+<img alt="Crime Analytics Platform Interface" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" src="./spatio_temporal_crime_analytics_platform_dashboard_interface_clean_modern/screen.png"/>
+</div>
+<div>
+<div class="font-serif text-sm font-medium text-light-text-primary">Crime Analytics Platform</div>
+<div class="text-xs text-light-text-secondary mt-0.5">Geospatial Maps &amp; AI Layer</div>
+</div>
+</div>
+<div class="bg-white border border-light-border rounded p-4 flex flex-col justify-between shadow-sm group">
+<div class="aspect-[4/3] border border-light-border rounded overflow-hidden mb-3 bg-light-surface-subtle">
+<img alt="ScrollEats Food App Interface" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" src="./assets/scrolleats_hero_preview.jpg"/>
+</div>
+<div>
+<div class="font-serif text-sm font-medium text-light-text-primary">ScrollEats Food App</div>
+<div class="text-xs text-light-text-secondary mt-0.5">Reels Feed &amp; Order Flows</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACT & FOOTER (bg #F8F7F3) -->
+<section class="w-full bg-light-canvas py-24" id="contact">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<span class="font-mono text-xs uppercase tracking-widest text-muted-meta">Collaboration</span>
+<h2 class="font-serif text-4xl sm:text-5xl font-medium text-light-text-primary leading-tight">
+              Let's build <span class="italic text-light-accent">scalable systems.</span>
+</h2>
+<p class="text-lg text-light-text-secondary font-sans leading-relaxed max-w-xl">
+              Currently seeking Software Development and Full-Stack Engineering internships. Open to solving real-world engineering challenges with the MERN stack, Python, and AI/ML.
+            </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 bg-light-accent text-white font-medium text-sm rounded hover:bg-blue-700 transition-colors shadow-sm" href="mailto:kartiksinghal2803@gmail.com">
+<span>Initiate Conversation</span>
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 border border-light-border bg-white text-light-text-primary font-medium text-sm rounded hover:border-light-text-primary transition-colors shadow-sm" href="https://drive.google.com/file/d/1ZmgBHrZc7flQQM9z173rHaKO-0C1uR3m/view?usp=share_link" target="_blank" rel="noopener noreferrer">
+<span>Download CV</span>
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-white border border-light-border rounded p-8 flex flex-col gap-4 text-sm font-sans shadow-sm">
+<span class="font-mono text-xs uppercase tracking-wider text-muted-meta pb-2 border-b border-light-border">Direct Channels</span>
+<div class="flex items-center justify-between py-1">
+<span class="text-light-text-secondary">Email:</span>
+<a class="text-light-accent hover:underline font-mono text-xs" href="mailto:kartiksinghal2803@gmail.com">kartiksinghal2803@gmail.com</a>
+</div>
+<div class="flex items-center justify-between py-1 border-t border-light-border">
+<span class="text-light-text-secondary">Phone:</span>
+<a class="text-light-text-primary hover:text-light-accent transition-colors font-mono text-xs" href="tel:+919399681611">+91 9399681611</a>
+</div>
+<div class="flex items-center justify-between py-1 border-t border-light-border">
+<span class="text-light-text-secondary">LinkedIn:</span>
+<a class="text-light-text-primary hover:text-light-accent transition-colors font-mono text-xs" href="https://www.linkedin.com/in/kartik-singhal28/" rel="noopener" target="_blank">/kartik-singhal28</a>
+</div>
+<div class="flex items-center justify-between py-1 border-t border-light-border">
+<span class="text-light-text-secondary">GitHub:</span>
+<a class="text-light-text-primary hover:text-light-accent transition-colors font-mono text-xs" href="https://github.com/softdev-kartik-singhal" rel="noopener" target="_blank">/softdev-kartik-singhal</a>
+</div>
+<div class="flex items-center justify-between py-1 border-t border-light-border">
+<span class="text-light-text-secondary">Location:</span>
+<span class="text-light-text-primary font-mono text-xs">Gwalior, MP, India (Open to Remote / On-site)</span>
+</div>
+</div>
+</div>
+<footer class="pt-12 border-t border-light-border flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-muted-meta font-mono">
+<div>
+            © 2026 KARTIK SINGHAL. FULL STACK &amp; INTELLIGENT SYSTEMS.
+          </div>
+<div class="flex items-center gap-6">
+<a class="hover:text-light-text-primary transition-colors" href="https://www.linkedin.com/in/kartik-singhal28/" rel="noopener" target="_blank">LinkedIn</a>
+<a class="hover:text-light-text-primary transition-colors" href="https://github.com/softdev-kartik-singhal" rel="noopener" target="_blank">GitHub</a>
+<a class="hover:text-light-text-primary transition-colors" href="https://drive.google.com/file/d/1ZmgBHrZc7flQQM9z173rHaKO-0C1uR3m/view?usp=share_link" target="_blank" rel="noopener noreferrer">Resume</a>
+<button class="hover:text-light-text-primary transition-colors" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top ↑</button>
+</div>
+</footer>
+</div>
+</section>
+</main>
+<!-- MODAL / CASE STUDY INSPECTION DIALOG -->
+<div class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-6" id="case-modal">
+<div class="bg-white border border-light-border rounded max-w-2xl w-full p-8 relative shadow-2xl">
+<button aria-label="Close modal" class="absolute top-6 right-6 text-light-text-secondary hover:text-light-text-primary transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="flex flex-col gap-4" id="modal-content">
+<!-- Dynamically populated -->
+</div>
+</div>
+</div>
+<script>
+    const projectDetails = {
+      'crime-modal': {
+        tag: 'Karnataka State Police Datathon 2026',
+        title: 'AI-Driven Crime Analytics & Visualization Platform',
+        stack: 'React · Zoho Catalyst · AI/ML · Python · Geospatial Maps',
+        summary: 'Engineering an AI-powered crime intelligence platform for the Karnataka State Police, integrating geospatial crime maps, officer performance dashboards, and AI-driven predictive crime forecasting.',
+        points: [
+          'Architected interactive geospatial crime maps isolating high-frequency incident hotspots.',
+          'Engineered officer performance telemetry and shift dispatch dashboards.',
+          'Built an AI insights layer with bilingual (Kannada/English) support translating raw crime records into decision-ready executive reports.'
+        ]
+      },
+      'scrolleats-modal': {
+        tag: 'Full-Stack Food Commerce Architecture',
+        title: 'ScrollEats – Short-Form Food Content & Ordering Platform',
+        stack: 'MongoDB · Express.js · React.js · Node.js · Tailwind CSS',
+        summary: 'Built a full-stack food exploration and digital ordering platform inspired by the engagement model of Instagram Reels and the transactional utility of Zomato.',
+        points: [
+          'Engineered immersive short-form video reels feed with seamless one-tap dish discovery.',
+          'Implemented secure role-based JWT authentication for foodies, restaurant partners, and admins.',
+          'Designed interactive social engagement systems including dish likes, bookmarked collections, and partner-managed restaurant menus.'
+        ]
+      },
+      'stokro-modal': {
+        tag: 'FinTech & Trading Simulation',
+        title: 'Stokro – Modern Stock Trading & Portfolio Platform',
+        stack: 'React.js · Node.js · Express.js · REST APIs · Tailwind CSS',
+        summary: 'Built a stock trading web application inspired by Zerodha, enabling users to explore real-time financial market trends, execute simulated virtual trades, and monitor comprehensive portfolio metrics.',
+        points: [
+          'Integrated market data visualization charts with responsive technical indicators.',
+          'Engineered virtual wallet management and simulated order-matching engine for risk-free trading.',
+          'Architected real-time portfolio performance tracking, P&L calculations, and asset allocation breakdowns.'
+        ]
+      },
+      'transit-modal': {
+        tag: 'Smart Automation & Telemetry',
+        title: 'Smart Transit Telemetry Hub – DropHack\'26',
+        stack: 'Python · REST APIs · Data Structures & Algorithms · Automation',
+        summary: 'Smart public transportation and automation system created for DropHack\'26, optimizing transit route scheduling and fleet telemetry across urban mobility networks.',
+        points: [
+          'Developed algorithmic routing models minimizing commuter transfer wait-times.',
+          'Simulated real-time vehicle GPS coordinates and passenger density telemetry.',
+          'Integrated automated notification triggers for public transit delays and schedule deviations.'
+        ]
+      },
+      'snapar-modal': {
+        tag: 'Spatial Computing & Augmented Reality',
+        title: 'Interactive AR Lenses & Generative AI Studio',
+        stack: 'Snap AR · Lens Studio · Generative AI · JavaScript',
+        summary: 'Created hands-on augmented reality experiences and intelligent interactive camera lenses developed through the Snap AR / Arexa & BharatXR Workshop and IIT Madras Shaastra AI Hackathon.',
+        points: [
+          'Built 3D face-tracking filters and interactive world-mesh lenses deployed to Snapchat.',
+          'Integrated generative AI prompt workflows for dynamic procedural asset texturing.',
+          'Optimized real-time shader pipelines and gesture recognition triggers for sub-16ms latency.'
+        ]
+      }
+    };
+
+    function openModal(id) {
+      const data = projectDetails[id];
+      if (!data) return;
+      const modal = document.getElementById('case-modal');
+      const content = document.getElementById('modal-content');
+
+      content.innerHTML = `
+        <span class="font-mono text-xs uppercase tracking-widest text-light-accent font-semibold">${data.tag}</span>
+        <h3 class="font-serif text-2xl font-medium text-light-text-primary">${data.title}</h3>
+        <div class="font-mono text-xs text-muted-meta pb-2 border-b border-light-border">${data.stack}</div>
+        <p class="text-sm text-light-text-secondary leading-relaxed">${data.summary}</p>
+        <div class="p-4 bg-light-surface-subtle border border-light-border rounded">
+          <span class="font-mono text-xs uppercase tracking-wider text-light-text-primary font-medium block mb-2">Key Highlights:</span>
+          <ul class="list-disc list-inside space-y-1 text-sm text-light-text-secondary">
+            ${data.points.map(p => `<li>${p}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-light-border flex justify-end">
+          <button onclick="closeModal()" class="px-4 py-2 border border-light-border bg-white rounded text-xs font-mono uppercase text-light-text-primary hover:border-light-accent hover:text-light-accent transition-colors shadow-sm">
+            Close Case Study
+          </button>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('case-modal').classList.add('hidden');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+      updateThemeIcon(isDark);
+    }
+
+    function updateThemeIcon(isDark) {
+      const icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateThemeIcon(document.documentElement.classList.contains('dark'));
+    });
+  </script>
+</body></html>
